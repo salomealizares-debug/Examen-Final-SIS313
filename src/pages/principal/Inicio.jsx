@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Inicio.css";
 import {
   Settings,
@@ -11,10 +11,14 @@ import {
   UserRound,
   FileText,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   MessageCircle,
 } from "lucide-react";
 
-
+/* ------------------------------------------------------------------ */
+/*  DATA                                                               */
+/* ------------------------------------------------------------------ */
 
 const NAV_LINKS = [
   "Inicio",
@@ -193,11 +197,67 @@ const SUCURSALES = [
   },
 ];
 
+const HERO_SLIDES = [
+  {
+    id: "contabilidad",
+    image: "/images/hero-contabilidad.jpg",
+    title: "MÓDULO DE CONTABILIDAD",
+    text: "EL SISTEMA DE CONTABILIDAD LE PERMITE REGISTRAR COMPROBANTES, GENERAR LIBROS Y MANEJAR SU PLAN DE CUENTAS DE FORMA ORDENADA Y CONFIABLE, CUMPLIENDO CON LA NORMATIVA VIGENTE.",
+  },
+  {
+    id: "inventarios",
+    image: "/images/hero-inventarios.jpg",
+    title: "MÓDULO DE INVENTARIOS",
+    text: "EL SISTEMA DE INVENTARIOS, REALIZA UN EFICIENTE CONTROL FISICO – VALORADO DE SUS PRODUCTOS A PARTIR DE LOS REGISTROS DE ENTRADAS Y SALIDAS DE ALMACÉN. SU AMIGABLE DISEÑO LO HACE DE FÁCIL MANEJO Y RÁPIDA IMPLEMENTACIÓN.",
+  },
+  {
+    id: "activos-fijos",
+    image: "/images/hero-activos-fijos.jpg",
+    title: "MÓDULO DE ACTIVOS FIJOS",
+    text: "CONTROLE LAS ALTAS Y BAJAS DE SUS ACTIVOS, SU UBICACIÓN Y GENERE REPORTES MENSUALES PARA UNA GESTIÓN PATRIMONIAL TRANSPARENTE Y ACTUALIZADA.",
+  },
+  {
+    id: "planilla",
+    image: "/images/hero-planilla.jpg",
+    title: "MÓDULO DE PLANILLA DE SUELDOS",
+    text: "AUTOMATICE EL PROCESO MENSUAL DE SUELDOS, LA PARAMETRIZACIÓN DE SUS EMPLEADOS Y LA GENERACIÓN DE REPORTES ANUALES SIN COMPLICACIONES.",
+  },
+  {
+    id: "facturacion",
+    image: "/images/hero-facturacion.jpg",
+    title: "MÓDULO DE FACTURACIÓN COMPUTARIZADA",
+    text: "EMITA FACTURAS, LLEVE SU LIBRO DE VENTAS Y GESTIONE LA APERTURA Y CIERRE DE SUS PERIODOS FISCALES DESDE UN SOLO LUGAR.",
+  },
+  {
+    id: "integrado",
+    image: "/images/hero-integrado.jpg",
+    title: "FACTURACIÓN, INVENTARIOS Y CONTABILIDAD",
+    text: "LA SOLUCIÓN INTEGRADA QUE UNE CONTROL DE INVENTARIO, FACTURACIÓN Y COMPROBANTES CONTABLES EN UN SOLO SISTEMA PARA SU EMPRESA.",
+  },
+];
 
-
+/* ------------------------------------------------------------------ */
+/*  COMPONENT                                                          */
+/* ------------------------------------------------------------------ */
 
 export default function SicJacSite() {
-  const [activeSlide, setActiveSlide] = useState(1);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const slideCount = HERO_SLIDES.length;
+
+  const goToSlide = (index) => {
+    setActiveSlide((index + slideCount) % slideCount);
+  };
+  const nextSlide = () => goToSlide(activeSlide + 1);
+  const prevSlide = () => goToSlide(activeSlide - 1);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slideCount);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused, slideCount]);
 
   return (
     <div className="sj-root">
@@ -228,23 +288,50 @@ export default function SicJacSite() {
         </ul>
       </header>
 
-      {/* HERO */}
-      <section className="sj-hero">
-        <div className="sj-hero-panel">
-          <h1>MODULO DE INVENTARIOS</h1>
-          <p>
-            EL SISTEMA DE INVENTARIOS, REALIZA UN EFICIENTE CONTROL FISICO – VALORADO DE
-            SUS PRODUCTOS A PARTIR DE LOS REGISTROS DE ENTRADAS Y SALIDAS DE ALMACÉN. SU
-            AMIGABLE DISEÑO LO HACE DE FÁCIL MANEJO Y RÁPIDA IMPLEMENTACIÓN.
-          </p>
-          <button className="sj-btn-clay">DETALLES</button>
-        </div>
+      {/* HERO CARRUSEL */}
+      <section
+        className="sj-hero"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {HERO_SLIDES.map((slide, i) => (
+          <div
+            key={slide.id}
+            className={`sj-hero-slide${i === activeSlide ? " active" : ""}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
+            aria-hidden={i !== activeSlide}
+          >
+            <div className="sj-hero-panel">
+              <h1>{slide.title}</h1>
+              <p>{slide.text}</p>
+              <button className="sj-btn-clay">DETALLES</button>
+            </div>
+          </div>
+        ))}
+
+        <button
+          type="button"
+          className="sj-hero-arrow sj-hero-arrow-left"
+          onClick={prevSlide}
+          aria-label="Anterior"
+        >
+          <ChevronLeft size={22} />
+        </button>
+        <button
+          type="button"
+          className="sj-hero-arrow sj-hero-arrow-right"
+          onClick={nextSlide}
+          aria-label="Siguiente"
+        >
+          <ChevronRight size={22} />
+        </button>
+
         <div className="sj-dots">
-          {[0, 1, 2, 3, 4, 5].map((d) => (
+          {HERO_SLIDES.map((slide, i) => (
             <span
-              key={d}
-              className={d === activeSlide ? "active" : ""}
-              onClick={() => setActiveSlide(d)}
+              key={slide.id}
+              className={i === activeSlide ? "active" : ""}
+              onClick={() => goToSlide(i)}
             />
           ))}
         </div>
@@ -266,7 +353,7 @@ export default function SicJacSite() {
       <section className="sj-welcome">
         <div className="sj-boxes">
           {["ACTIVOS FIJOS", "INVENTARIOS", "PLANILLA DE SUELDOS", "CONTABILIDAD"].map((b) => (
-            <div className="sj-box" key={b}>SIC-JAC{"\n"}{b}</div>
+            <div className="sj-box" key={b}>SIC-JAC<br />{b}</div>
           ))}
         </div>
         <div className="sj-welcome-text">

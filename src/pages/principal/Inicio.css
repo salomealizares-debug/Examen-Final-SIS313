@@ -78,21 +78,33 @@
           border-bottom: 2px solid var(--blue);
         }
 
-        /* ---------- HERO ---------- */
+        /* ---------- HERO CARRUSEL ---------- */
         .sj-hero {
           position: relative;
           height: 480px;
-          background: linear-gradient(to right, #d8cfc0, #b9b0a2);
+          background: #b9b0a2;
           overflow: hidden;
         }
-        .sj-hero::before {
+        .sj-hero-slide {
+          position: absolute;
+          inset: 0;
+          background-color: #b9b0a2;
+          background-size: cover;
+          background-position: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.9s ease;
+          z-index: 0;
+        }
+        .sj-hero-slide.active {
+          opacity: 1;
+          visibility: visible;
+          z-index: 1;
+        }
+        .sj-hero-slide::before {
           content: "";
           position: absolute; inset: 0;
-          background:
-            repeating-linear-gradient(90deg,
-              rgba(60,45,30,0.35) 0px, rgba(60,45,30,0.35) 30px,
-              transparent 30px, transparent 60px);
-          opacity: 0.5;
+          background: linear-gradient(to right, rgba(20,15,10,0.35), rgba(20,15,10,0.1));
         }
         .sj-hero-panel {
           position: absolute;
@@ -102,9 +114,16 @@
           padding: 40px 50px;
           max-width: 620px;
         }
+        .sj-hero-slide.active .sj-hero-panel {
+          animation: sj-panel-in 0.7s ease 0.25s forwards;
+        }
+        @keyframes sj-panel-in {
+          from { opacity: 0; transform: translateY(-50%) translateX(-24px); }
+          to { opacity: 1; transform: translateY(-50%) translateX(0); }
+        }
         .sj-hero-panel h1 {
           color: var(--blue);
-          font-size: 30px;
+          font-size: 28px;
           letter-spacing: 1px;
           margin: 0 0 18px;
         }
@@ -125,17 +144,40 @@
           cursor: pointer;
         }
         .sj-btn-clay:hover { background: var(--clay-dark); }
+
+        .sj-hero-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 2;
+          width: 42px; height: 42px;
+          border-radius: 50%;
+          border: none;
+          background: rgba(0,0,0,0.35);
+          color: #fff;
+          display: flex; align-items: center; justify-content: center;
+          cursor: pointer;
+          transition: background 0.2s ease;
+        }
+        .sj-hero-arrow:hover { background: rgba(0,0,0,0.6); }
+        .sj-hero-arrow-left { left: 18px; }
+        .sj-hero-arrow-right { right: 18px; }
+
         .sj-dots {
           position: absolute;
           bottom: 18px; left: 50%;
           transform: translateX(-50%);
           display: flex; gap: 8px;
+          z-index: 2;
         }
         .sj-dots span {
           width: 9px; height: 9px; border-radius: 50%;
           background: rgba(255,255,255,0.6);
           cursor: pointer;
+          transition: background 0.2s ease, transform 0.2s ease;
         }
+        .sj-dots span:hover { background: rgba(255,255,255,0.85); }
+
         .sj-dots span.active { background: var(--blue); }
 
         /* ---------- INFO CARDS ---------- */
@@ -434,5 +476,7 @@
         @media (max-width: 560px) {
           .sj-info-grid, .sj-features, .sj-suc-grid, .sj-modulos-grid { grid-template-columns: 1fr; }
           .sj-hero-panel { left: 4%; right: 4%; padding: 26px; }
+          .sj-hero-arrow { width: 34px; height: 34px; }
+          .sj-hero-arrow-left { left: 8px; }
+          .sj-hero-arrow-right { right: 8px; }
         }
-
