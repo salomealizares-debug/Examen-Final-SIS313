@@ -1,0 +1,441 @@
+/* ==================================================================
+   OficinaCentral.css
+   Replica completa de los estilos de la página "Oficina Central"
+   ================================================================== */
+
+/* ---------- Reset básico ---------- */
+.oc-page,
+.oc-page *,
+.oc-page *::before,
+.oc-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.oc-page ul,
+.oc-page ol {
+  list-style: none;
+}
+
+.oc-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.oc-page button {
+  font-family: inherit;
+}
+
+/* ---------- Página ---------- */
+.oc-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #3a3a3a;
+  font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.oc-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 24px 0 24px;
+}
+
+/* ---------- Título ---------- */
+.oc-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #4a4a4a;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+}
+
+/* ---------- Selector de contacto ---------- */
+.oc-select-wrap {
+  margin-bottom: 18px;
+}
+
+.oc-select-label {
+  display: block;
+  font-size: 12px;
+  color: #8a8a8a;
+  margin-bottom: 5px;
+}
+
+.oc-select {
+  width: 230px;
+  max-width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  padding: 5px 8px;
+  font-size: 13px;
+  color: #4a4a4a;
+  background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%238a8a8a'/></svg>") no-repeat right 10px center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.oc-select:hover {
+  border-color: #b9b9b9;
+}
+
+.oc-select:focus {
+  border-color: #3b7dd8;
+  box-shadow: 0 0 0 2px rgba(59, 125, 216, 0.12);
+}
+
+/* ---------- Tarjeta de mapa ---------- */
+.oc-map-card {
+  position: relative;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 26px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.oc-map-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 260px;
+}
+
+.oc-map-tag-title {
+  color: #2e7d6b;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.oc-map-tag-address {
+  font-size: 11px;
+  color: #8a8a8a;
+  margin-top: 2px;
+}
+
+.oc-map-tag-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-left: 10px;
+  border-left: 1px solid #eeeeee;
+  flex-shrink: 0;
+}
+
+.oc-map-tag-icon {
+  color: #8a8a8a;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.oc-map-tag-icon:hover {
+  color: #4a4a4a;
+}
+
+.oc-map-frame-wrap {
+  width: 100%;
+  height: 300px;
+  background: #e5e3df;
+}
+
+.oc-map-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.oc-map-layers {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 10;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.oc-map-layer-btn {
+  width: 32px;
+  height: 32px;
+  background: #e5e3df;
+  border: 1px solid #cfcfcf;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.oc-map-layer-btn:hover {
+  background: #d8d6d1;
+}
+
+.oc-map-fullscreen {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 10;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.oc-map-fullscreen:hover {
+  background: #f2f2f2;
+}
+
+/* ---------- Datos de contacto ---------- */
+.oc-contact-info {
+  font-size: 12.5px;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.oc-contact-info p {
+  margin: 0 0 2px 0;
+}
+
+.oc-label-strong {
+  font-weight: 700;
+  color: #4a4a4a;
+}
+
+.oc-whatsapp {
+  color: #3fae6a;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px !important;
+}
+
+.oc-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.oc-contact-icon {
+  color: #8a8a8a;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.oc-email-list {
+  color: #3b7dd8;
+}
+
+.oc-email-list p {
+  cursor: pointer;
+  margin: 0 0 3px 0;
+  transition: color 0.15s ease;
+}
+
+.oc-email-list p:hover {
+  color: #2a5ea0;
+  text-decoration: underline;
+}
+
+.oc-required-note {
+  font-size: 11px;
+  color: #8a8a8a;
+  margin-bottom: 18px;
+}
+
+/* ---------- Formulario ---------- */
+.oc-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+  .oc-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.oc-field-label {
+  display: block;
+  font-size: 12px;
+  color: #6a6a6a;
+  margin-bottom: 5px;
+}
+
+.oc-input,
+.oc-textarea {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  padding: 7px 9px;
+  font-size: 13px;
+  color: #3a3a3a;
+  font-family: inherit;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.oc-input::placeholder,
+.oc-textarea::placeholder {
+  color: #b3b3b3;
+}
+
+.oc-input:hover,
+.oc-textarea:hover {
+  border-color: #b9b9b9;
+}
+
+.oc-input:focus,
+.oc-textarea:focus {
+  border-color: #3b7dd8;
+  box-shadow: 0 0 0 2px rgba(59, 125, 216, 0.12);
+}
+
+.oc-textarea {
+  resize: none;
+  min-height: 130px;
+}
+
+/* ---------- Captcha ---------- */
+.oc-captcha-wrap {
+  margin-bottom: 18px;
+}
+
+.oc-captcha-box {
+  width: 260px;
+  max-width: 100%;
+  min-height: 80px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #c0392b;
+  padding: 10px;
+}
+
+/* ---------- Checkbox + botón enviar ---------- */
+.oc-actions-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.oc-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #6a6a6a;
+  cursor: pointer;
+}
+
+.oc-checkbox {
+  width: 14px;
+  height: 14px;
+  accent-color: #c0392b;
+  cursor: pointer;
+}
+
+.oc-submit-btn {
+  background: #c0392b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 9px 22px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.oc-submit-btn:hover {
+  background: #a93226;
+}
+
+.oc-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Enlaces ---------- */
+.oc-enlaces-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin: 34px 0 10px 0;
+  padding-bottom: 24px;
+  border-top: 1px solid #ececec;
+  padding-top: 20px;
+}
+
+/* ---------- Footer ---------- */
+.oc-footer {
+  background: #2b2b2b;
+  color: #bdbdbd;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 14px 0;
+  margin-top: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .oc-container {
+    padding: 18px 16px 0 16px;
+  }
+
+  .oc-map-frame-wrap {
+    height: 220px;
+  }
+
+  .oc-map-tag {
+    max-width: calc(100% - 24px);
+  }
+
+  .oc-captcha-box {
+    width: 100%;
+  }
+}
