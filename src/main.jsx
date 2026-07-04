@@ -5,6 +5,7 @@ import Inicio from './pages/principal/Inicio.jsx'
 import Distribucion from './pages/distribuidores/distribuidores.jsx'
 import OficinaCentral from './pages/contactos/PaginaDeContactos.jsx'
 import Descargas from './pages/descargas/descargas.jsx'
+import Clientes from './pages/clientes/clientes.jsx'
 import { getRouterPath } from './utils/sitePaths.js'
 
 // Router muy simple: como el proyecto no usa react-router, elegimos
@@ -26,6 +27,9 @@ function paginaSegunRuta() {
     case '/descargas':
       console.log('[ROUTER] Rendering Descargas')
       return <Descargas />
+    case '/clientes':
+      console.log('[ROUTER] Rendering Clientes')
+      return <Clientes />
     default:
       console.log('[ROUTER] Rendering Inicio (default)')
       return <Inicio />
