@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { buildPath } from '../../utils/sitePaths.js'
 import './distribuidores.css'
 
 /* -------------------------------------------------------------------
@@ -386,24 +387,24 @@ export default function Distribucion() {
         <nav>
           <ul className="sj-menu">
             <li>
-              <a href="/">Inicio</a>
+              <a href={buildPath('/')}>Inicio</a>
             </li>
             <li>
-              <a href="/descargas">Descargas</a>
+              <a href={buildPath('/descargas')}>Descargas</a>
             </li>
             <li>
-              <a href="/productos">Productos</a>
+              <a href={buildPath('/productos')}>Productos</a>
             </li>
             <li>
-              <a href="/clientes">Clientes</a>
+              <a href={buildPath('/clientes')}>Clientes</a>
             </li>
             <li>
-              <a href="/distribuidores" className="active">
+              <a href={buildPath('/distribuidores')} className="active">
                 Distribuidores
               </a>
             </li>
             <li>
-              <a href="/contactos">Contactos</a>
+              <a href={buildPath('/contactos')}>Contactos</a>
             </li>
           </ul>
         </nav>

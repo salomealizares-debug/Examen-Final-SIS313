@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { buildPath } from '../../utils/sitePaths.js'
 import './header.css'
 
 /* Imágenes embebidas en base64 (no requieren carpeta assets ni bundler) */
@@ -32,15 +33,15 @@ export default function Header() {
       {/* Barra de navegación */}
       <div className="hd-nav-bar">
         <div className="hd-nav-inner">
-          <a href="/" className="hd-logo">
+          <a href={buildPath('/')} className="hd-logo">
             <img src={LOGO} alt="SIC-JAC Contabilidad Software" className="hd-logo-img" />
           </a>
 
           <nav className="hd-nav-links">
-            <a href="/" className="hd-nav-link hd-nav-link--active-blue">
+            <a href={buildPath('/')} className="hd-nav-link hd-nav-link--active-blue">
               Inicio
             </a>
-            <a href="/descargas" className="hd-nav-link">
+            <a href={buildPath('/descargas')} className="hd-nav-link">
               Descargas
             </a>
 
@@ -49,32 +50,32 @@ export default function Header() {
               onMouseEnter={() => setProductosAbierto(true)}
               onMouseLeave={() => setProductosAbierto(false)}
             >
-              <a href="/productos" className="hd-nav-link hd-nav-link--dropdown">
+              <a href={buildPath('/productos')} className="hd-nav-link hd-nav-link--dropdown">
                 Productos
                 <ChevronDown size={12} className="hd-chevron" />
               </a>
               {productosAbierto && (
                 <div className="hd-dropdown-menu">
-                  <a href="/productos/contable" className="hd-dropdown-item">
+                  <a href={buildPath('/productos/contable')} className="hd-dropdown-item">
                     Software Contable
                   </a>
-                  <a href="/productos/nomina" className="hd-dropdown-item">
+                  <a href={buildPath('/productos/nomina')} className="hd-dropdown-item">
                     Software de Nómina
                   </a>
-                  <a href="/productos/facturacion" className="hd-dropdown-item">
+                  <a href={buildPath('/productos/facturacion')} className="hd-dropdown-item">
                     Facturación Electrónica
                   </a>
                 </div>
               )}
             </div>
 
-            <a href="/clientes" className="hd-nav-link">
+            <a href={buildPath('/clientes')} className="hd-nav-link">
               Clientes
             </a>
-            <a href="/distribuidores" className="hd-nav-link">
+            <a href={buildPath('/distribuidores')} className="hd-nav-link">
               Distribuidores
             </a>
-            <a href="/contactos" className="hd-nav-link hd-nav-link--active">
+            <a href={buildPath('/contactos')} className="hd-nav-link hd-nav-link--active">
               Contactos
             </a>
           </nav>

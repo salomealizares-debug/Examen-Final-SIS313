@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mi-proyecto</title>
+    <script>
+      // Guardar la ruta actual (ej: /RepoTest/descargas) antes de redirigir
+      const currentPath = window.location.pathname
+      localStorage.setItem('__ghPagesPath', currentPath)
+
+      // Redirigir a index.html (que está en /RepoTest/)
+      window.location.replace('/RepoTest/')
+    </script>
+  </head>
+  <body>
+    Redireccionar...
+  </body>
+</html>
