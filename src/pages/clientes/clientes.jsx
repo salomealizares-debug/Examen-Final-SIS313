@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./clientes.css";
-
+import CustomHeader from '../../components/header/header.jsx'
 import aduanasLogos from "../../assets/aduanas-logos.png";
 import medicosLogos from "../../assets/medicos-logos.png";
 import comercioLogos from "../../assets/comercio-logos.png";
@@ -120,6 +120,7 @@ function clientes() {
 
   return (
     <div className="clientes-directory">
+      <CustomHeader />
       <header className="clientes-directory__header">
         <span className="clientes-directory__eyebrow">
           Directorio · Actualizado 2026
