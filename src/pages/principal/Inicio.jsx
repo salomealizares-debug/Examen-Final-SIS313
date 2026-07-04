@@ -15,6 +15,8 @@ import {
   ChevronRight,
   MessageCircle,
 } from "lucide-react";
+import CustomHeader from "../../components/header/header.jsx";
+
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                               */
@@ -272,21 +274,7 @@ export default function SicJacSite() {
       </div>
 
       {/* HEADER */}
-      <header className="sj-header">
-        <div className="sj-logo">
-          <div className="sj-logo-box">
-            SIC · JAC
-            <div className="sj-logo-sub">
-              CONTABILIDAD
-            </div>
-          </div>
-        </div>
-        <ul className="sj-nav">
-          {NAV_LINKS.map((link, i) => (
-            <li key={link} className={i === 0 ? "active" : ""}>{link}</li>
-          ))}
-        </ul>
-      </header>
+      <CustomHeader />
 
       {/* HERO CARRUSEL */}
       <section
