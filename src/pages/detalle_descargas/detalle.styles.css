@@ -1,0 +1,190 @@
+/* ===== Contenedor general ===== */
+.modulo-inventario {
+  --color-borde: #d9d9d9;
+  --color-fondo-header: #f7f7f7;
+  --color-texto: #333333;
+  --color-texto-suave: #555555;
+  --color-enlace: #2a6bb0;
+  --color-boton: #cc7a3f;
+  --color-boton-hover: #b8692f;
+  --color-icono-sync: #7ab648;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-texto);
+  background: #ffffff;
+}
+
+/* ===== Encabezado ===== */
+.modulo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-fondo-header);
+  border: 1px solid var(--color-borde);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.modulo-header h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.icon-sync {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--color-icono-sync);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+/* ===== Descripción ===== */
+.modulo-descripcion {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-texto-suave);
+  margin-bottom: 24px;
+}
+
+/* ===== Lista de recursos ===== */
+.lista-recursos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recurso-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.recurso-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recurso-titulo {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.recurso-archivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-enlace);
+  text-decoration: none;
+}
+
+.recurso-archivo:hover {
+  text-decoration: underline;
+}
+
+/* ===== Iconos de archivo ===== */
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.icon-rar {
+  fill: #6b4fa0;
+}
+
+.icon-rar .icon-stripe {
+  fill: #ffffff;
+}
+
+.icon-pdf {
+  fill: #d64545;
+}
+
+.icon-pdf .icon-label {
+  fill: #ffffff;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.icon-video {
+  fill: #b8692f;
+}
+
+/* ===== Botones de acción ===== */
+.recurso-acciones {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--color-boton);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.btn:hover {
+  background: var(--color-boton-hover);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #333333;
+  outline-offset: 2px;
+}
+
+/* ===== Pie: controles de orden y paginación ===== */
+.modulo-footer {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.control-grupo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.control-grupo select {
+  padding: 4px 8px;
+  font-size: 13px;
+  border: 1px solid var(--color-borde);
+  border-radius: 2px;
+  background: #ffffff;
+  color: var(--color-texto);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .recurso-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .recurso-acciones {
+    align-self: flex-start;
+  }
+
+  .modulo-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

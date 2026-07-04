@@ -1,0 +1,135 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #4a4a4a;
+}
+
+.wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 20px 25px 0 25px;
+}
+
+.titlebar {
+  background: #f2f2f2;
+  border: 1px solid #d8d8d8;
+  padding: 18px 25px;
+  font-weight: bold;
+  color: #444;
+  letter-spacing: 1px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  border-top: 1px solid #e2e2e2;
+  padding: 30px 0;
+}
+
+.row.single {
+  grid-template-columns: 1fr;
+}
+
+.module {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-box {
+  flex: 0 0 175px;
+  width: 175px;
+  height: 130px;
+  border: 1px solid #e2e2e2;
+}
+
+.icon-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content h2 {
+  color: #2E9FE0;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+}
+
+.content p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 18px 0;
+  color: #555;
+  text-align: justify;
+}
+
+.btnaux {
+    display: inline-block;
+    background: #C0623E;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.btn {
+  display: inline-block;
+  background: #C0623E;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn.dark {
+  background: #3d3d3d;
+}
+
+footer {
+  background: #262626;
+  margin-top: 20px;
+  padding: 25px 25px 15px 25px;
+}
+
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.social {
+  margin-bottom: 25px;
+}
+
+.social img {
+  height: 34px;
+  display: block;
+}
+
+.footer-credit {
+  border-top: 1px solid #3d3d3d;
+  padding-top: 12px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.footer-credit a {
+  color: #6bb7e8;
+  text-decoration: none;
+}
