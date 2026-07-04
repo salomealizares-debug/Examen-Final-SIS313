@@ -1,0 +1,395 @@
+/* ==================================================================
+   Productos.css
+   Estilos de la página de módulo de producto (MÓDULO DE CONTABILIDAD, etc.)
+   ================================================================== */
+
+.pp-page,
+.pp-page *,
+.pp-page *::before,
+.pp-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.pp-page {
+  background: #f4f4f4;
+  font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+  color: #555555;
+  padding: 24px 0 40px 0;
+}
+
+.pp-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Barra de título ---------- */
+.pp-title-bar {
+  background: #eef1f4;
+  border: 1px solid #dfe3e7;
+  border-left: 4px solid #2f7cd6;
+  border-radius: 2px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+}
+
+.pp-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #2c3e50;
+  text-transform: uppercase;
+}
+
+/* ---------- Meta información ---------- */
+.pp-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  color: #9a9a9a;
+  margin-bottom: 20px;
+  padding-left: 2px;
+}
+
+.pp-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pp-meta-sep {
+  color: #cccccc;
+}
+
+/* ---------- Imagen + introducción ---------- */
+.pp-intro-row {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 26px;
+  align-items: flex-start;
+}
+
+.pp-intro-image {
+  flex: 0 0 220px;
+  width: 220px;
+}
+
+.pp-intro-image-placeholder {
+  width: 100%;
+  height: 150px;
+  border-radius: 2px;
+  border: 1px solid #d8d8d8;
+  background: repeating-linear-gradient(
+    135deg,
+    #eceff2,
+    #eceff2 10px,
+    #e3e7eb 10px,
+    #e3e7eb 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #9aa3ac;
+  font-size: 11px;
+  padding: 8px;
+}
+
+.pp-intro-text {
+  flex: 1;
+  font-size: 12.5px;
+  line-height: 1.8;
+  text-align: justify;
+  color: #666666;
+}
+
+.pp-intro-text p {
+  margin-bottom: 12px;
+}
+
+/* ---------- Lista de características ---------- */
+.pp-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px 32px;
+  margin-bottom: 22px;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 18px;
+}
+
+@media (min-width: 640px) {
+  .pp-features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pp-features-col {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.pp-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #555555;
+  line-height: 1.5;
+}
+
+.pp-feature-icon {
+  color: #e8b400;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* ---------- Texto de llamado a la acción ---------- */
+.pp-cta-text {
+  font-size: 11.5px;
+  color: #8a8a8a;
+  line-height: 1.7;
+  text-align: center;
+  margin: 22px auto 26px auto;
+  max-width: 760px;
+  font-style: italic;
+}
+
+/* ---------- Tarjeta de video ---------- */
+.pp-video-card {
+  border: 1px solid #d8d8d8;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  background: #ffffff;
+}
+
+.pp-video-header {
+  background: #1a2f4b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 10px 16px;
+}
+
+.pp-video-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eef2f6;
+}
+
+.pp-video-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid #c7d0d9;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #dfe6ee;
+}
+
+.pp-video-mockup-window {
+  background: #f7f9fb;
+  padding-bottom: 20px;
+}
+
+.pp-video-mockup-titlebar {
+  background: #d6dee6;
+  padding: 6px 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.pp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pp-dot--red {
+  background: #e0554f;
+}
+
+.pp-dot--yellow {
+  background: #e6b800;
+}
+
+.pp-dot--green {
+  background: #4caf50;
+}
+
+.pp-video-mockup-fields {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pp-video-mockup-field {
+  border: 1px solid #c7d0d9;
+  border-radius: 2px;
+  background: #ffffff;
+  padding: 8px 10px;
+  font-size: 11px;
+  color: #9aa3ac;
+}
+
+.pp-video-mockup-radios {
+  display: flex;
+  gap: 18px;
+  font-size: 11px;
+  color: #666666;
+}
+
+.pp-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e02b2b;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.pp-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: #c81f1f;
+}
+
+.pp-video-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.pp-video-icon-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #c7d0d9;
+  background: #ffffff;
+  color: #6a7580;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.pp-video-icon-btn:hover {
+  background: #eef1f4;
+}
+
+.pp-youtube-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e02b2b;
+  text-decoration: none;
+}
+
+.pp-youtube-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Beneficios ---------- */
+.pp-benefits-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 26px;
+}
+
+@media (min-width: 768px) {
+  .pp-benefits-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.pp-benefit {
+  text-align: center;
+  padding: 0 12px;
+}
+
+.pp-benefit-icon {
+  color: #2f7cd6;
+  margin-bottom: 10px;
+}
+
+.pp-benefit h3 {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #3a3a3a;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.pp-benefit p {
+  font-size: 11.5px;
+  color: #8a8a8a;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.pp-btn {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 8px 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+
+.pp-btn--outline {
+  background: #ffffff;
+  border: 1px solid #2f7cd6;
+  color: #2f7cd6;
+}
+
+.pp-btn--outline:hover {
+  background: #2f7cd6;
+  color: #ffffff;
+}
+
+.pp-btn--solid {
+  background: #e07b1f;
+  border: 1px solid #e07b1f;
+  color: #ffffff;
+}
+
+.pp-btn--solid:hover {
+  background: #c76a15;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .pp-intro-row {
+    flex-direction: column;
+  }
+
+  .pp-intro-image {
+    width: 100%;
+    flex: none;
+  }
+}
