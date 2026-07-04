@@ -118,20 +118,7 @@ function App() {
     </>
   )
 }
-import { useEffect } from "react";
-
-export default function Inicio() {
-
-  useEffect(() => {
-    window.location.href = "/distribuidores";
-  }, []);
-
-  return (
-    <div>
-      Redireccionando...
-    </div>
-  );
-}
 
 
-export default App
+
+export default App  
