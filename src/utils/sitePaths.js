@@ -18,7 +18,7 @@ export function getRouterPath() {
   if (ghPagesPath) {
     localStorage.removeItem('__ghPagesPath')
 
-    // ghPagesPath es /RepoTest/descargas, base es /RepoTest/
+    // ghPagesPath es /Examen-Final-SIS313/descargas, base es /Examen-Final-SIS313/
     if (ghPagesPath.startsWith(base)) {
       const relativePath = ghPagesPath.slice(base.length)
       const result = relativePath ? '/' + relativePath : '/'
