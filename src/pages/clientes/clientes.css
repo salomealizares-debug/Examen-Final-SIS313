@@ -1,0 +1,156 @@
+.clientes-directory {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.clientes-directory__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.clientes-directory__eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid #d9d9d9;
+  color: #666;
+  font-size: 14px;
+}
+
+.clientes-directory__title {
+  margin: 20px 0 10px;
+  font-size: 42px;
+  color: #1d3557;
+}
+
+.clientes-directory__lead {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.clientes-directory__search {
+  width: 100%;
+  max-width: 450px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.rubro {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.rubro__tab {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 25px;
+  color: white;
+}
+
+.rubro--teal .rubro__tab {
+  background: #00796b;
+}
+
+.rubro--blue .rubro__tab {
+  background: #1565c0;
+}
+
+.rubro--rust .rubro__tab {
+  background: #8d4b20;
+}
+
+.rubro__code {
+  font-weight: bold;
+  background: rgba(255,255,255,.2);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.rubro__title {
+  flex: 1;
+  font-size: 22px;
+}
+
+.rubro__count {
+  font-size: 14px;
+}
+
+.rubro__image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #fafafa;
+}
+
+.rubro__image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.rubro__extra {
+  padding: 25px;
+}
+
+.rubro__extra-label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.ledger-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ledger-row {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ledger-row__index {
+  width: 55px;
+  color: #777;
+  font-weight: bold;
+}
+
+.ledger-row__name {
+  flex: 1;
+}
+
+.rubro__extra-empty {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .clientes-directory {
+    padding: 1rem;
+  }
+
+  .clientes-directory__title {
+    font-size: 30px;
+  }
+
+  .rubro__tab {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .rubro__image {
+    max-width: 100%;
+  }
+}
