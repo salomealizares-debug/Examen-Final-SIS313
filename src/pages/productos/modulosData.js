@@ -66,6 +66,7 @@ const modulosData = {
     videoTitulo: "VIDEO DE PRESENTACIÓN — MÓDULO DE INVENTARIO",
   },
 
+  
   planilla: {
     menuLabel: "Módulo De Planilla De Sueldos",
     titulo: "MÓDULO DE PLANILLA DE SUELDOS",
