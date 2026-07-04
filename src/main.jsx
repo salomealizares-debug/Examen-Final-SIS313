@@ -1,11 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import Inicio from './pages/principal/Inicio.jsx'
 import Distribucion from './pages/distribuidores/distribuidores.jsx'
 import OficinaCentral from './pages/contactos/PaginaDeContactos.jsx'
 import Descargas from './pages/descargas/descargas.jsx'
+import { getRouterPath } from './utils/sitePaths.js'
 
 // Router muy simple: como el proyecto no usa react-router, elegimos
 // que componente mostrar segun la ruta (pathname) que tenga el navegador.
@@ -13,25 +13,23 @@ import Descargas from './pages/descargas/descargas.jsx'
 // recarga la pagina en esa ruta; Vite sirve el mismo index.html, este
 // archivo se vuelve a ejecutar y aqui decidimos que pagina mostrar.
 function paginaSegunRuta() {
-  switch (window.location.pathname) {
+  const routePath = getRouterPath()
+  console.log('[ROUTER] Current path:', routePath)
+
+  switch (routePath) {
     case '/distribuidores':
+      console.log('[ROUTER] Rendering Distribucion')
       return <Distribucion />
     case '/contactos':
+      console.log('[ROUTER] Rendering OficinaCentral')
       return <OficinaCentral />
     case '/descargas':
+      console.log('[ROUTER] Rendering Descargas')
       return <Descargas />
-    // Aqui cada integrante puede agregar su propia ruta cuando tenga
-    // su pagina lista, por ejemplo:
-    // case '/productos':
-    //   return <Productos />;
     default:
+      console.log('[ROUTER] Rendering Inicio (default)')
       return <Inicio />
   }
 }
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {/* <App /> */}
-    {paginaSegunRuta()}
-  </StrictMode>
-)
+createRoot(document.getElementById('root')).render(<StrictMode>{paginaSegunRuta()}</StrictMode>)
