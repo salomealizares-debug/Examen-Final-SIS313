@@ -9,7 +9,7 @@ hd-header,
 
 .hd-header {
   width: 100%;
-  font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+  font-family: Arial, Helvetica, 'Segoe UI', sans-serif;
 }
 
 /* ---------- Franja roja superior ---------- */
@@ -35,7 +35,6 @@ hd-header,
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-
 }
 
 /* ---------- Logo ---------- */
@@ -84,7 +83,7 @@ hd-header,
 }
 
 .hd-nav-link--active::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
@@ -130,7 +129,9 @@ hd-header,
   color: #444444;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .hd-dropdown-item:hover {

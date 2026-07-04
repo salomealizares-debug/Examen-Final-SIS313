@@ -32,7 +32,7 @@
   min-height: 100vh;
   background: #ffffff;
   color: #3a3a3a;
-  font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+  font-family: Arial, Helvetica, 'Segoe UI', sans-serif;
   font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -74,7 +74,9 @@
   padding: 5px 8px;
   font-size: 13px;
   color: #4a4a4a;
-  background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%238a8a8a'/></svg>") no-repeat right 10px center;
+  background: #ffffff
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%238a8a8a'/></svg>")
+    no-repeat right 10px center;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -307,7 +309,9 @@
   font-family: inherit;
   outline: none;
   background: #ffffff;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .oc-input::placeholder,
@@ -388,7 +392,9 @@
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.05s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.05s ease;
 }
 
 .oc-submit-btn:hover {

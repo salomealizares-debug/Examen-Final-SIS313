@@ -52,10 +52,7 @@ export default [
       ...reactHooks.configs.recommended.rules,
 
       // Vite
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true }
-      ],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
       // Estilo general
       semi: ['error', 'never'],
