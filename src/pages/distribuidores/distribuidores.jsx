@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./distribuidores.css"
+import CustomHeader from "../../components/header/header.jsx";
 
 /* -------------------------------------------------------------------
    Iconos SVG inline (no requieren instalar ninguna librería aparte)
