@@ -383,12 +383,12 @@ export default function Distribucion() {
         </div>
         <nav>
           <ul className="sj-menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Descargas</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#" className="active">Distribuidores</a></li>
-            <li><a href="#">Contactos</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/descargas">Descargas</a></li>
+            <li><a href="/productos">Productos</a></li>
+            <li><a href="/clientes">Clientes</a></li>
+            <li><a href="/distribuidores" className="active">Distribuidores</a></li>
+            <li><a href="/contactos">Contactos</a></li>
           </ul>
         </nav>
       </header>
