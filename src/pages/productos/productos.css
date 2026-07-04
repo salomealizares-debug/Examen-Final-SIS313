@@ -14,7 +14,7 @@
 
 .pp-page {
   background: #f4f4f4;
-  font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+  font-family: Arial, Helvetica, 'Segoe UI', sans-serif;
   color: #555555;
   padding: 24px 0 40px 0;
 }
@@ -83,13 +83,7 @@
   height: 150px;
   border-radius: 2px;
   border: 1px solid #d8d8d8;
-  background: repeating-linear-gradient(
-    135deg,
-    #eceff2,
-    #eceff2 10px,
-    #e3e7eb 10px,
-    #e3e7eb 20px
-  );
+  background: repeating-linear-gradient(135deg, #eceff2, #eceff2 10px, #e3e7eb 10px, #e3e7eb 20px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,7 +258,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
 }
 
 .pp-play-btn:hover {

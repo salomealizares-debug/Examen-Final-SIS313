@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   Calendar,
   User,
@@ -9,30 +9,26 @@ import {
   RotateCcw,
   ShieldCheck,
   Zap,
-  Headphones,
-} from "lucide-react";
-import "./productos.css";
+  Headphones
+} from 'lucide-react'
+import { getRouterPath } from '../../utils/sitePaths.js'
+import modulosData from './modulosData.js'
+import CustomHeader from '../../components/header/header.jsx'
+import './productos.css'
 
-export default function ModuloProducto({ data }) {
-  if (!data) return null;
+function ModuloProducto({ data }) {
+  if (!data) return null
 
-  const {
-    titulo,
-    fecha,
-    autor,
-    vistas,
-    intro,
-    features,
-    videoTitulo,
-  } = data;
+  const { titulo, fecha, autor, vistas, intro, features, videoTitulo } = data
 
   // Divide la lista de características en dos columnas, como en el original
-  const mitad = Math.ceil(features.length / 2);
-  const columnaIzq = features.slice(0, mitad);
-  const columnaDer = features.slice(mitad);
+  const mitad = Math.ceil(features.length / 2)
+  const columnaIzq = features.slice(0, mitad)
+  const columnaDer = features.slice(mitad)
 
   return (
     <main className="pp-page">
+      <CustomHeader />
       <div className="pp-container">
         {/* Barra de título */}
         <div className="pp-title-bar">
@@ -93,9 +89,9 @@ export default function ModuloProducto({ data }) {
 
         {/* Llamado a la acción */}
         <p className="pp-cta-text">
-          Solicite ahora mismo una demostración gratuita y descubra cómo este
-          módulo puede adaptarse al flujo de trabajo de su empresa, sin
-          compromiso y con acompañamiento de nuestro equipo técnico.
+          Solicite ahora mismo una demostración gratuita y descubra cómo este módulo puede adaptarse
+          al flujo de trabajo de su empresa, sin compromiso y con acompañamiento de nuestro equipo
+          técnico.
         </p>
 
         {/* Video de presentación */}
@@ -118,8 +114,7 @@ export default function ModuloProducto({ data }) {
                   </div>
                   <div className="pp-video-mockup-radios">
                     <label>
-                      <input type="radio" name="demo-radio" readOnly checked />{" "}
-                      Sí
+                      <input type="radio" name="demo-radio" readOnly checked /> Sí
                     </label>
                     <label>
                       <input type="radio" name="demo-radio" readOnly /> No
@@ -156,8 +151,8 @@ export default function ModuloProducto({ data }) {
             <ShieldCheck size={26} className="pp-benefit-icon" />
             <h3>El mejor plan mensual para su PYME</h3>
             <p>
-              Acceda a todas las funcionalidades del sistema con un plan
-              mensual accesible, sin inversión inicial en licencias.
+              Acceda a todas las funcionalidades del sistema con un plan mensual accesible, sin
+              inversión inicial en licencias.
             </p>
             <button className="pp-btn pp-btn--outline">Solicitar Demo</button>
           </div>
@@ -165,8 +160,8 @@ export default function ModuloProducto({ data }) {
             <Headphones size={26} className="pp-benefit-icon" />
             <h3>Soporte técnico incluido en su plan</h3>
             <p>
-              Nuestro equipo lo acompaña en la implementación y resuelve sus
-              dudas durante todo el proceso de adopción.
+              Nuestro equipo lo acompaña en la implementación y resuelve sus dudas durante todo el
+              proceso de adopción.
             </p>
             <button className="pp-btn pp-btn--outline">Solicitar Demo</button>
           </div>
@@ -174,13 +169,39 @@ export default function ModuloProducto({ data }) {
             <Zap size={26} className="pp-benefit-icon" />
             <h3>Actualizaciones automáticas y gratuitas</h3>
             <p>
-              Reciba las nuevas versiones del sistema sin costo adicional,
-              siempre alineadas a los cambios normativos vigentes.
+              Reciba las nuevas versiones del sistema sin costo adicional, siempre alineadas a los
+              cambios normativos vigentes.
             </p>
             <button className="pp-btn pp-btn--solid">Actualizar</button>
           </div>
         </div>
       </div>
     </main>
-  );
+  )
+}
+
+function getProductosModuleKey(pathname) {
+  const pathParts = pathname.split('/').filter(Boolean)
+  const slug = pathParts[1] || ''
+
+  switch (slug) {
+    case 'contable':
+      return 'contabilidad'
+    case 'nomina':
+      return 'planilla'
+    case 'facturacion':
+      return 'facturacion-integrado'
+    default:
+      return 'contabilidad'
+  }
+}
+
+export default function Productos() {
+  const routePath = getRouterPath()
+  const moduleKey = routePath.startsWith('/productos')
+    ? getProductosModuleKey(routePath)
+    : 'contabilidad'
+  const data = modulosData[moduleKey] || modulosData.contabilidad
+
+  return <ModuloProducto data={data} />
 }

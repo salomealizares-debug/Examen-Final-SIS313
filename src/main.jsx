@@ -6,6 +6,7 @@ import Distribucion from './pages/distribuidores/distribuidores.jsx'
 import OficinaCentral from './pages/contactos/PaginaDeContactos.jsx'
 import Descargas from './pages/descargas/descargas.jsx'
 import Clientes from './pages/clientes/clientes.jsx'
+import Productos from './pages/productos/productos.jsx'
 import { getRouterPath } from './utils/sitePaths.js'
 
 // Router muy simple: como el proyecto no usa react-router, elegimos
@@ -30,6 +31,12 @@ function paginaSegunRuta() {
     case '/clientes':
       console.log('[ROUTER] Rendering Clientes')
       return <Clientes />
+    case '/productos':
+    case '/productos/contable':
+    case '/productos/nomina':
+    case '/productos/facturacion':
+      console.log('[ROUTER] Rendering Productos')
+      return <Productos />
     default:
       console.log('[ROUTER] Rendering Inicio (default)')
       return <Inicio />
