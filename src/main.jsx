@@ -5,6 +5,7 @@ import App from './App.jsx'
 import Inicio from './pages/principal/Inicio.jsx'
 import Distribucion from './pages/distribuidores/distribuidores.jsx'
 import OficinaCentral from './pages/contactos/PaginaDeContactos.jsx'
+import Descargas from './pages/descargas/descargas.jsx'
 
 // Router muy simple: como el proyecto no usa react-router, elegimos
 // que componente mostrar segun la ruta (pathname) que tenga el navegador.
@@ -17,6 +18,8 @@ function paginaSegunRuta() {
       return <Distribucion />;
     case '/contactos':
       return <OficinaCentral />;
+    case '/descargas':
+      return <Descargas />;
     // Aqui cada integrante puede agregar su propia ruta cuando tenga
     // su pagina lista, por ejemplo:
     // case '/productos':

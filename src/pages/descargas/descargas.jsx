@@ -1,10 +1,14 @@
 import './descargas.styles.css';
 import { Link } from "react-router-dom";
+import CustomHeader from "../../components/header/header.jsx";
 
 
 function Descargas() {
   return (
     <>
+            <div>
+                <CustomHeader/>
+            </div>
 <div className="wrapper">
   <div className="titlebar">DESCARGAS</div>
 
@@ -16,7 +20,7 @@ function Descargas() {
       <div className="content">
         <h2>Módulo de Contabilidad</h2>
         <p>El Módulo de Contabilidad es un sistema diseñado en base a leyes, decretos y normas vigentes relacionadas al comercio y a la parte tributaria, que regulan el registro y documentación contable. El sistema es bimonetario, emite reportes en moneda nacional (Bs.) y moneda extranjera (USD). Los reportes son mostrados en pantalla con la opción de impresión. También se pueden exportar en formato Excel.</p>
-        <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link>
+        {/* <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link> */}
       </div>
     </div>
 
@@ -27,7 +31,7 @@ function Descargas() {
       <div className="content">
         <h2>Módulo de Planilla de Sueldos</h2>
         <p>El Sistema de Planilla de Sueldos y Salarios, le permite ver e imprimir reportes de la planilla de sueldos, planilla impositiva, planilla para AFP Futuro, AFP Previsión, papeleta de pago, planilla de Aguinaldo, Aguinaldo Esfuerzo por Bolivia, papeleta de aguinaldo, exportar en formato Excel la planilla Mensual para el Ministerio de Trabajo y exporta datos en formato txt para el Software FACILITO, en el caso que él, o los empleados sean alcanzados por el RC-IVA.</p>
-        <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link>
+        {/* <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link> */}
       </div>
     </div>
   </div>
@@ -40,7 +44,7 @@ function Descargas() {
       <div className="content">
         <h2>Módulo de Inventario</h2>
         <p>El Sistema de Inventarios le permite llevar el control físico valorado de su almacén. Es versátil, puesto que el usuario puede registrar o parametrizar según sus necesidades y experiencia previa, las opciones de categoría, sub categoría, ítem, cliente, proveedor, personal y tipos de movimiento. Dicha parametrización y categorización de los ítems, se reflejará en los resultados que son los reportes que genera el sistema.</p>
-        <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link>
+        {/* <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link> */}
       </div>
     </div>
 
@@ -51,7 +55,7 @@ function Descargas() {
       <div className="content">
         <h2>Módulo de Facturación</h2>
         <p>El Módulo de Facturación Computarizada es un desarrollo a medida del cliente, ya que pueden requerir alguna opción referida al rubro o tipo de actividad de su empresa, o reporte específico. Este desarrollo parte de la base que el Sistema de Facturación genera el Código de Control, el Código QR y la factura con las características según normativa vigente.</p>
-        <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link>
+        {/* <Link className="btnaux" to="/detalle_descargas">VER DETALLES</Link> */}
       </div>
     </div>
   </div>
@@ -64,7 +68,7 @@ function Descargas() {
       <div className="content">
         <h2>Módulo de Activos Fijo</h2>
         <p>El Módulo de Activos Fijos administra la información monetaria y no monetaria de los activos que forman parte de la empresa. El módulo le facilita el manejo de la información contable de los activos (en moneda local y en dólares), así como la depreciación por uso y la actualización por la variación de la unidad de fomento de vivienda (UFV). Por otro lado, le proporciona el control de movimientos, ubicaciones y responsables de activos.</p>
-        <a className="btn" href="#">VER DETALLES</a>
+        {/* <a className="btn" href="#">VER DETALLES</a> */}
       </div>
     </div>
   </div>
