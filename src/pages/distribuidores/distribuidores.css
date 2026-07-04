@@ -130,7 +130,7 @@
 }
 
 .sj-block:after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }

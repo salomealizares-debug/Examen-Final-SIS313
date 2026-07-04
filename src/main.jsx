@@ -15,17 +15,17 @@ import Descargas from './pages/descargas/descargas.jsx'
 function paginaSegunRuta() {
   switch (window.location.pathname) {
     case '/distribuidores':
-      return <Distribucion />;
+      return <Distribucion />
     case '/contactos':
-      return <OficinaCentral />;
+      return <OficinaCentral />
     case '/descargas':
-      return <Descargas />;
+      return <Descargas />
     // Aqui cada integrante puede agregar su propia ruta cuando tenga
     // su pagina lista, por ejemplo:
     // case '/productos':
     //   return <Productos />;
     default:
-      return <Inicio />;
+      return <Inicio />
   }
 }
 
@@ -33,5 +33,5 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
     {paginaSegunRuta()}
-  </StrictMode>,
+  </StrictMode>
 )
